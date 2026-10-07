@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TicketFlow | Support Desk</title>
+    <meta
+      name="description"
+      content="TicketFlow is a modern help desk and issue tracking system for support teams."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-bar">
+        <div class="brand">
+          <span class="brand-mark">T</span>
+          <span>TicketFlow</span>
+        </div>
+        <nav class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#tickets">Tickets</a>
+          <a href="#create">New Ticket</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a href="#create" class="btn btn-primary">Create Ticket</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Fast. Organized. Reliable.</p>
+            <h1>Track customer issues without the chaos.</h1>
+            <p class="hero-text">
+              TicketFlow helps support teams capture requests, prioritize issues, and resolve customer concerns faster.
+            </p>
+            <div class="hero-actions">
+              <a href="#create" class="btn btn-primary">Open a Ticket</a>
+              <a href="#tickets" class="btn btn-secondary">View Tickets</a>
+            </div>
+            <ul class="hero-points">
+              <li>Live support queue</li>
+              <li>Priority-based triage</li>
+              <li>Quick customer response</li>
+            </ul>
+          </div>
+
+          <div class="hero-card">
+            <div class="mini-stat">
+              <span class="stat-number">1.2k</span>
+              <span class="stat-label">Tickets resolved</span>
+            </div>
+            <div class="mini-stat accent">
+              <span class="stat-number">98%</span>
+              <span class="stat-label">Customer satisfaction</span>
+            </div>
+            <div class="ticket-panel">
+              <p>Today’s queue</p>
+              <strong>24 open tickets</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats" id="tickets">
+        <div class="container stats-grid">
+          <div class="stat-box">
+            <strong>240+</strong>
+            <span>Active users</span>
+          </div>
+          <div class="stat-box">
+            <strong>14 min</strong>
+            <span>Avg. response</span>
+          </div>
+          <div class="stat-box">
+            <strong>3x</strong>
+            <span>Faster triage</span>
+          </div>
+          <div class="stat-box">
+            <strong>24/7</strong>
+            <span>Support access</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="create-ticket" id="create">
+        <div class="container create-grid">
+          <div class="section-copy">
+            <p class="eyebrow">New support request</p>
+            <h2>Submit a ticket in minutes</h2>
+            <p>
+              Share the issue details, urgency, and customer information so the team can respond quickly.
+            </p>
+          </div>
+
+          <form id="ticketForm" class="ticket-form">
+            <div class="form-row two-col">
+              <label>
+                Ticket Title
+                <input type="text" name="title" placeholder="Login issue / Billing concern" required />
+              </label>
+              <label>
+                Category
+                <select name="category" required>
+                  <option value="">Select category</option>
+                  <option value="Technical">Technical</option>
+                  <option value="Billing">Billing</option>
+                  <option value="Account">Account</option>
+                  <option value="Product">Product</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="form-row two-col">
+              <label>
+                Customer Name
+                <input type="text" name="customerName" placeholder="Jane Smith" required />
+              </label>
+              <label>
+                Email
+                <input type="email" name="email" placeholder="jane@email.com" required />
+              </label>
+            </div>
+
+            <div class="form-row two-col">
+              <label>
+                Priority
+                <select name="priority" required>
+                  <option value="">Select priority</option>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                  <option value="Urgent">Urgent</option>
+                </select>
+              </label>
+              <label>
+                Status
+                <input type="text" value="Open" disabled />
+              </label>
+            </div>
+
+            <label>
+              Description
+              <textarea name="description" rows="5" placeholder="Write the issue details here..." required></textarea>
+            </label>
+
+            <button type="submit" class="btn btn-primary full-width">Submit Ticket</button>
+            <div id="formStatus" class="form-status" aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+
+      <section class="recent-tickets">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Recent activity</p>
+            <h2>Latest support tickets</h2>
+          </div>
+          <div id="ticketList" class="ticket-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand footer-brand">
+            <span class="brand-mark">T</span>
+            <span>TicketFlow</span>
+          </div>
+          <p>Modern customer support solutions for growing businesses and service teams.</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>support@ticketflow.com</li>
+            <li>+91 98765 43210</li>
+            <li>Chennai, India</li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
