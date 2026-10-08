@@ -1,7 +1,7 @@
 {
   "name": "ticket-system",
   "version": "1.0.0",
-  "description": "Ticket management website with Node.js and MongoDB",
+  "description": "Ticket management website with Node.js and Express",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -10,7 +10,6 @@
   "keywords": [
     "ticket",
     "support",
-    "mongodb",
     "express",
     "html",
     "css",
@@ -21,9 +20,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.21.2",
-    "mongodb-memory-server": "^10.1.3",
-    "mongoose": "^8.8.1"
+    "express": "^4.21.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
